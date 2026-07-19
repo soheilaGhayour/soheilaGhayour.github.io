@@ -2,6 +2,7 @@ import AboutSection from '../components/AboutSection'
 import Contact from '../components/Contact'
 import Hero from '../components/Hero'
 import Nav from '../components/Nav'
+import RecommendationsSection from '../components/RecommendationsSection'
 import Skills from '../components/Skills'
 import WorkSection from '../components/WorkSection'
 import { usePageMeta } from '../usePageMeta'
@@ -20,6 +21,7 @@ export default function HomePage() {
         <AboutSection />
         <WorkSection />
         <Skills />
+        <RecommendationsSection />
         <Contact />
       </main>
     </>

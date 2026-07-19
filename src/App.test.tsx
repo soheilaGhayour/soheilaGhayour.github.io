@@ -67,6 +67,21 @@ describe('home page', () => {
     ).toBeGreaterThan(0)
   })
 
+  it('renders LinkedIn recommendations verbatim', () => {
+    renderAt('/')
+    for (const name of [
+      /sebastian walther/i,
+      /christopher olofson/i,
+      /parham heydari/i,
+      /mina farshadmehr/i,
+    ]) {
+      expect(screen.getByText(name)).toBeInTheDocument()
+    }
+    expect(
+      screen.getByText(/measurably accelerated our release cycles/i),
+    ).toBeInTheDocument()
+  })
+
   it('shows a card linking to each case study', () => {
     renderAt('/')
     for (const study of caseStudies) {

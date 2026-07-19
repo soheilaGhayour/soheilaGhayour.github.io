@@ -22,7 +22,7 @@ export const caseStudies: CaseStudy[] = [
     role: 'Frontend Engineer',
     period: '2024 – 2026',
     accent: '#7c6cff',
-    tags: ['TypeScript', 'SQL generation', 'Data visualization'],
+    tags: ['Vue', 'TypeScript', 'SQL generation', 'Data visualization'],
     context:
       'ValueWorks.ai is a business-intelligence platform where executives track company KPIs. I worked as a frontend engineer on the analytics surface of the product, next to my M.Sc. studies.',
     situation:
@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
     role: 'Frontend Engineer',
     period: '2024 – 2026',
     accent: '#4cc38a',
-    tags: ['TypeScript', 'Syncfusion', 'Performance', 'Vendor management'],
+    tags: ['Vue', 'Syncfusion', 'Performance', 'Vendor management'],
     context:
       'The platform ships an interactive pivot table — built on the Syncfusion component library — that customers use to slice KPI data. I owned this feature end to end: bugs, customer tickets, and its relationship with the vendor.',
     situation:

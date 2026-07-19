@@ -6,6 +6,7 @@ const items = [
   { label: 'About', hash: '#about' },
   { label: 'Work', hash: '#work' },
   { label: 'Skills', hash: '#skills' },
+  { label: 'Recommendations', hash: '#recommendations' },
   { label: 'Contact', hash: '#contact' },
 ]
 
