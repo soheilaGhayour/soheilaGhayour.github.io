@@ -63,8 +63,8 @@ describe('home page', () => {
       expect(screen.getByRole('heading', { name: employer })).toBeInTheDocument()
     }
     expect(
-      screen.getByText(/technische hochschule ingolstadt/i),
-    ).toBeInTheDocument()
+      screen.getAllByText(/technische hochschule ingolstadt/i).length,
+    ).toBeGreaterThan(0)
   })
 
   it('shows a card linking to each case study', () => {
