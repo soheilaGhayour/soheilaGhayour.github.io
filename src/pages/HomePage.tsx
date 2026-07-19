@@ -2,6 +2,7 @@ import Contact from '../components/Contact'
 import Hero from '../components/Hero'
 import Nav from '../components/Nav'
 import Skills from '../components/Skills'
+import WorkSection from '../components/WorkSection'
 
 export default function HomePage() {
   return (
@@ -14,10 +15,7 @@ export default function HomePage() {
           <h2 className="section-title">About</h2>
         </section>
 
-        <section id="work" className="section container">
-          <h2 className="section-title">Selected Work</h2>
-        </section>
-
+        <WorkSection />
         <Skills />
         <Contact />
       </main>

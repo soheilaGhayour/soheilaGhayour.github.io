@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it } from 'vitest'
 import App from './App'
+import { caseStudies } from './data/caseStudies'
 
 function renderAt(path: string) {
   return render(
@@ -54,5 +55,54 @@ describe('home page', () => {
     for (const label of ['Home', 'About', 'Work', 'Skills', 'Contact']) {
       expect(nav).toHaveTextContent(label)
     }
+  })
+
+  it('shows a card linking to each case study', () => {
+    renderAt('/')
+    for (const study of caseStudies) {
+      const card = screen.getByRole('link', {
+        name: new RegExp(study.title, 'i'),
+      })
+      expect(card).toHaveAttribute('href', `/work/${study.slug}`)
+    }
+  })
+})
+
+describe('case study pages', () => {
+  it.each(caseStudies.map((study) => [study.slug, study] as const))(
+    '/work/%s renders the full SAR story',
+    (slug, study) => {
+      renderAt(`/work/${slug}`)
+      expect(
+        screen.getByRole('heading', { name: new RegExp(study.title, 'i') }),
+      ).toBeInTheDocument()
+      for (const heading of [
+        /context/i,
+        /the problem/i,
+        /what i did/i,
+        /outcome/i,
+      ]) {
+        expect(
+          screen.getByRole('heading', { name: heading }),
+        ).toBeInTheDocument()
+      }
+      expect(
+        screen.getByRole('link', { name: /back to selected work/i }),
+      ).toBeInTheDocument()
+    },
+  )
+
+  it('renders not-found for an unknown slug', () => {
+    renderAt('/work/nope')
+    expect(
+      screen.getByRole('heading', { name: /page not found/i }),
+    ).toBeInTheDocument()
+  })
+
+  it('renders not-found for an unknown route', () => {
+    renderAt('/whatever')
+    expect(
+      screen.getByRole('heading', { name: /page not found/i }),
+    ).toBeInTheDocument()
   })
 })
