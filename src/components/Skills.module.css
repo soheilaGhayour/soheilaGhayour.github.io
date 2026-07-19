@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-text) 7%, transparent);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.group {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}

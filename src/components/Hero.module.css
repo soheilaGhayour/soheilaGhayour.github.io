@@ -1,0 +1,104 @@
+.hero {
+  padding-top: clamp(6rem, 16vw, 10rem);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 6vw, 5rem);
+  flex-wrap: wrap-reverse;
+}
+
+.text {
+  flex: 1 1 26rem;
+}
+
+.kicker {
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.name {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+}
+
+.tagline {
+  color: var(--color-muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  max-width: 34rem;
+  margin-bottom: 1.75rem;
+}
+
+.social {
+  display: flex;
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.social a {
+  color: var(--color-muted);
+  transition: color 0.15s ease;
+}
+
+.social a:hover,
+.social a:focus-visible {
+  color: var(--color-accent);
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.secondary {
+  border: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
+  color: var(--color-text);
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-2px);
+}
+
+.secondary:hover {
+  border-color: var(--color-accent);
+}
+
+.portrait {
+  width: clamp(180px, 28vw, 320px);
+  height: clamp(180px, 28vw, 320px);
+  object-fit: cover;
+  object-position: top;
+  border-radius: 28px;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--color-accent) 18%, transparent);
+}

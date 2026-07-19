@@ -20,6 +20,31 @@ describe('home page', () => {
     expect(screen.getByText(/data-heavy interfaces/i)).toBeInTheDocument()
   })
 
+  it('has resume download and contact links', () => {
+    renderAt('/')
+    const resume = screen.getByRole('link', { name: /download resume/i })
+    expect(resume).toHaveAttribute('href', '/resume.pdf')
+    expect(
+      screen.getByRole('link', { name: /soheilaghayourkazemi@gmail\.com/i }),
+    ).toHaveAttribute('href', 'mailto:soheilaghayourkazemi@gmail.com')
+    expect(screen.getAllByRole('link', { name: /linkedin/i }).length)
+      .toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /github/i }).length)
+      .toBeGreaterThan(0)
+  })
+
+  it('renders skills groups from the resume', () => {
+    renderAt('/')
+    for (const group of [
+      /languages/i,
+      /frameworks/i,
+      /apis & data/i,
+      /testing & tooling/i,
+    ]) {
+      expect(screen.getByRole('heading', { name: group })).toBeInTheDocument()
+    }
+  })
+
   it('renders all five sections with nav links to them', () => {
     renderAt('/')
     for (const title of [/about/i, /selected work/i, /skills/i, /contact/i]) {
