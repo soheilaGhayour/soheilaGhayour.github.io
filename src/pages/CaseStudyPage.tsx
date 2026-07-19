@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import Nav from '../components/Nav'
-import { getCaseStudy } from '../data/caseStudies'
+import { getCaseStudy, type CaseStudy } from '../data/caseStudies'
+import { usePageMeta } from '../usePageMeta'
 import NotFoundPage from './NotFoundPage'
 import styles from './CaseStudyPage.module.css'
 
@@ -11,6 +12,15 @@ export default function CaseStudyPage() {
   if (!study) {
     return <NotFoundPage />
   }
+
+  return <CaseStudyContent study={study} />
+}
+
+function CaseStudyContent({ study }: { study: CaseStudy }) {
+  usePageMeta(
+    `${study.title} — Soheila Ghayour Kazemi`,
+    study.hook,
+  )
 
   return (
     <>

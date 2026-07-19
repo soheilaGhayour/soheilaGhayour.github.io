@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
+import { usePageMeta } from '../usePageMeta'
 
 export default function NotFoundPage() {
+  usePageMeta(
+    'Page not found — Soheila Ghayour Kazemi',
+    'This page doesn’t exist.',
+  )
   return (
     <>
       <Nav />
