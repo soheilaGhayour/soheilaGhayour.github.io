@@ -19,4 +19,15 @@ describe('home page', () => {
     ).toBeInTheDocument()
     expect(screen.getByText(/data-heavy interfaces/i)).toBeInTheDocument()
   })
+
+  it('renders all five sections with nav links to them', () => {
+    renderAt('/')
+    for (const title of [/about/i, /selected work/i, /skills/i, /contact/i]) {
+      expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+    }
+    const nav = screen.getByRole('navigation', { name: /main/i })
+    for (const label of ['Home', 'About', 'Work', 'Skills', 'Contact']) {
+      expect(nav).toHaveTextContent(label)
+    }
+  })
 })

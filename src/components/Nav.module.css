@@ -1,0 +1,44 @@
+.bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.inner {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.75rem;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.links {
+  display: flex;
+  gap: clamp(0.9rem, 3vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: var(--color-text);
+}
