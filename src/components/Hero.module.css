@@ -75,7 +75,7 @@
 }
 
 .primary {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
   color: #fff;
 }
 
