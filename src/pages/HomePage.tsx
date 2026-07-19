@@ -1,3 +1,4 @@
+import AboutSection from '../components/AboutSection'
 import Contact from '../components/Contact'
 import Hero from '../components/Hero'
 import Nav from '../components/Nav'
@@ -11,10 +12,7 @@ export default function HomePage() {
       <main id="top">
         <Hero />
 
-        <section id="about" className="section container">
-          <h2 className="section-title">About</h2>
-        </section>
-
+        <AboutSection />
         <WorkSection />
         <Skills />
         <Contact />

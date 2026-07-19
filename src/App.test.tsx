@@ -57,6 +57,16 @@ describe('home page', () => {
     }
   })
 
+  it('renders the career timeline with employers', () => {
+    renderAt('/')
+    for (const employer of [/arashweb/i, /sinansoft/i, /valueworks/i]) {
+      expect(screen.getByRole('heading', { name: employer })).toBeInTheDocument()
+    }
+    expect(
+      screen.getByText(/technische hochschule ingolstadt/i),
+    ).toBeInTheDocument()
+  })
+
   it('shows a card linking to each case study', () => {
     renderAt('/')
     for (const study of caseStudies) {
